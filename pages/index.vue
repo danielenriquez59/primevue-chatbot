@@ -24,7 +24,7 @@
         <div class="flex -pt-5 space-x-2">
             <Textarea v-model="userInput" placeholder="Type a message..."
                 class="w-full px-2 py-1 rounded-md border-2 border-blue-300" />
-            <Button label="Send" icon="" class="px-1" @click="sendMessage" />
+            <Button label="Send" icon="pi pi-send" class="px-1" @click="sendMessage" />
         </div>
     </div>
 </template>

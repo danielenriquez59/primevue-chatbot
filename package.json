@@ -15,6 +15,7 @@
     "nuxt": "^3.6.2"
   },
   "dependencies": {
+    "primeicons": "^6.0.1",
     "primevue": "^3.29.2"
   }
 }

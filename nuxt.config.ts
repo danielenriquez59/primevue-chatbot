@@ -3,8 +3,12 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: [
         "primevue/resources/themes/lara-light-blue/theme.css",
-        "primevue/resources/primevue.css"
+        "primevue/resources/primevue.css",
+        'primeicons/primeicons.css'
     ],
+  plugins: [
+      '~/plugins/primevue.js', // change this to your plugin file path
+  ],
 	build: {
 		transpile: ["primevue"],
 	},
