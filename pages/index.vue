@@ -6,7 +6,10 @@
     </div>
     <div class="h-[87vh] flex flex-col bg-gray-100 p-4 px-24">
         <div class="flex flex-col h-full overflow-y-auto space-y-4">
-            <h2>PrimeVue ChatBot</h2>
+            <div class="flex space-x-2">
+                <img src="@/assets/primevue-logo.webp" width="20" />
+                <h2>PrimeVue ChatBot</h2>
+            </div>
             <div v-if="conversationHistory.length !== 0" v-for="(message, index) in conversationHistory" :key="index"
                 class="max-w-lg mx-auto min-w-[25vw] text-white">
                 <div class="rounded-lg shadow-md p-2 px-3" :class="{
