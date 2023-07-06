@@ -5,6 +5,8 @@ You will need your personal OpenAi API-KEY. Get it here: https://platform.openai
 
 Much credit to [Slamsneider] (https://github.com/Slamsneider/SimpleHtmlChatAgents) for his inspiration!
 
+![Screengrab of PrimeVue Chatbot](@/assets/screengrab.png)
+
 ## Setup
 
 Make sure to install the dependencies:
