@@ -3,9 +3,9 @@
 It uses PrimeVue. This is an experiment for my own benefit. Much credit to
 You will need your personal OpenAi API-KEY. Get it here: https://platform.openai.com/account/api-keys
 
-Much credit to [Slamsneider] (https://github.com/Slamsneider/SimpleHtmlChatAgents) for his inspiration!
+Much credit to [Slamsneider](https://github.com/Slamsneider/SimpleHtmlChatAgents) for his inspiration!
 
-![Screengrab of PrimeVue Chatbot](@/assets/screengrab.png)
+![Screengrab of PrimeVue Chatbot](./assets/screengrab.png)
 
 ## Setup
 
