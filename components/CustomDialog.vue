@@ -8,6 +8,7 @@
 
 <script setup>
 import Dialog from 'primevue/dialog';
+const visible = ref(false);
 const position = ref('bottom');
 </script>
 
