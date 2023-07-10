@@ -18,6 +18,8 @@ yarn install
 
 Add your OPENAI API KEY, PINECONE INDEX, PINECONE ENVIRONMENT, and PINECONE API KEY to the .env file
 
+Add your PDFs to send to PINECONE in storage/pdfs directory
+
 ## Development Server
 
 Start the development server on `http://localhost:3000`:
