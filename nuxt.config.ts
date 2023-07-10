@@ -22,7 +22,10 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
   runtimeConfig: {
     public:{
-      OPENAI_APIKEY: process.env.OPENAI_APIKEY
+      OPENAI_APIKEY: process.env.OPENAI_APIKEY,
+      PINECONE_API_KEY: process.env.PINECONE_API_KEY,
+      PINECONE_API_ENV: process.env.PINECONE_API_ENV,
+      PINECONE_INDEX: process.env.PINECONE_INDEX
     }
   },
 })

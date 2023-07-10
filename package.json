@@ -15,6 +15,11 @@
     "nuxt": "^3.6.2"
   },
   "dependencies": {
+    "@pinecone-database/pinecone": "^0.1.6",
+    "fs.promises": "^0.1.2",
+    "langchain": "^0.0.103",
+    "p-queue": "^7.3.4",
+    "pdf-parse": "^1.1.1",
     "primeicons": "^6.0.1",
     "primevue": "^3.29.2"
   }

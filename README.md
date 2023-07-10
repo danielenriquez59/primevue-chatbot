@@ -16,7 +16,7 @@ Make sure to install the dependencies:
 yarn install
 ```
 
-Add your OPENAI API key to the .env file
+Add your OPENAI API KEY, PINECONE INDEX, PINECONE ENVIRONMENT, and PINECONE API KEY to the .env file
 
 ## Development Server
 
