@@ -1,13 +1,10 @@
 <template>
-    <div class="flex items-center justify-center space-x-4 py-2 bg-gray-200">
+    <div class="flex items-center justify-center space-x-4 py-4 bg-gray-200">
         <ModelSelect></ModelSelect>
         <AgentSelect></AgentSelect>
         <TemperatureSelect></TemperatureSelect>
     </div>
-    <div class="flex items-center justify-center space-x-4 py-1 bg-gray-200">
-        <ButtonsToPinecone />
-    </div>
-    <div class="h-[76vh] flex flex-col bg-gray-100 p-4 px-24">
+    <div class="h-[87vh] flex flex-col bg-gray-100 p-4 px-24">
         <div class="flex flex-col h-full overflow-y-auto space-y-4">
             <div class="flex space-x-2">
                 <img src="~/assets/primevue-logo.webp" width="20" />
@@ -38,7 +35,7 @@ import Textarea from 'primevue/textarea';
 const currentTemperature = useTemperature()
 const currentAgent = useAgent()
 const currentChatModel = useChatModel()
-const state = reactive({})
+
 // ref vars
 const statusMessage = ref("")
 const conversationHistory = ref([
@@ -46,8 +43,6 @@ const conversationHistory = ref([
 const userInput = ref("")
 
 async function sendMessage() {
-    state.loading = true
-
     // clean message 
     if (userInput.value.trim() === "") {
         //we don't want to send empty messages
@@ -66,29 +61,16 @@ async function sendMessage() {
         conversationHistory.value
     );
 
-    // Call QA model
-    const result = await $fetch('/api/vectorqa', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            text: FullPrompt,
-            model: selectedModel,
-            temperature: currentTemperature.value,
-            selectedTokens: selectedTokens,
-        })
-    });
-
+    // push user message
+    const result = await callOpenai(selectedModel, FullPrompt, currentTemperature.value, selectedTokens);
+    console.log(result)
     conversationHistory.value.push({ role: "assistant", content: result.answer });
-    statusMessage.value = source
-    // statusMessage.value = `Used ${result.total_tokens} tokens. finish_reason=${result.finish_reason}`
+    statusMessage.value = `Used ${result.total_tokens} tokens. finish_reason=${result.finish_reason}`
+    // reset input
     userInput.value = ""
-
-
-    // const data = await response.json();
-    state.loading = false
 }
 
 
 </script>
+
+<style lang="scss" scoped></style>

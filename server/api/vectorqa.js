@@ -43,10 +43,12 @@ export default eventHandler(async (req) => {
     returnSourceDocuments: true,
   });
 
-  const response = await chain.call({ query: text });
+  // BUG: this is a hack until i figure out how to pass chat history
+  const response = await chain.call({ query: text[text.length - 1].content });
+
   const { text: responseText, sourceDocuments } = response;
   return {
-    text: responseText,
+    answer: responseText,
     source: sourceDocuments[0]?.pageContent ?? "No source document found",
   };
 });

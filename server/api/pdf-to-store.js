@@ -1,5 +1,4 @@
 // import { UnstructuredLoader } from "langchain/document_loaders/fs/unstructured";
-import { Document } from "langchain/document";
 import { PDFLoader } from "langchain/document_loaders/fs/pdf";
 // import { UnstructuredDirectoryLoader } from "langchain/document_loaders/fs/unstructured"; // https://js.langchain.com/docs/modules/indexes/document_loaders/examples/file_loaders/unstructured
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
