@@ -67,13 +67,16 @@ async function sendMessage() {
     );
 
     // Call QA model
-    const response = await $fetch('/api/chat', {
+    const response = await $fetch('/api/vectorqa', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            text: FullPrompt
+            text: FullPrompt,
+            model: selectedModel,
+            temperature: currentTemperature.value,
+            selectedTokens: selectedTokens,
         })
     });
 

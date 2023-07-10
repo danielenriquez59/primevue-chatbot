@@ -15,7 +15,7 @@ export default eventHandler(async (req) => {
   const pineconeIndex = client.Index(runtimeConfig.public.PINECONE_INDEX);
 
   const body = await readBody(req);
-  const { text } = body;
+  const { text, model, temperature } = body;
 
   if (!text) {
     setResponseStatus("Missing text", 400);
@@ -32,13 +32,13 @@ export default eventHandler(async (req) => {
     pineconeIndex,
   });
 
-  const model = new ChatOpenAI({
-    temperature: 0.5,
+  const chatModel = new ChatOpenAI({
+    temperature: temperature,
     openAIApiKey: runtimeConfig.public.OPENAI_APIKEY,
-    modelName: "gpt-3.5-turbo",
+    modelName: model,
   });
 
-  const chain = VectorDBQAChain.fromLLM(model, vectorStore, {
+  const chain = VectorDBQAChain.fromLLM(chatModel, vectorStore, {
     k: 5,
     returnSourceDocuments: true,
   });
